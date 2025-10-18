@@ -25,3 +25,17 @@ offset = Vector2(-0.00024414063, -40.599976)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 shape = SubResource("CircleShape2D_soqow")
 metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 154.0
+text = "Notre super jeu !"
+horizontal_alignment = 1
+vertical_alignment = 1
