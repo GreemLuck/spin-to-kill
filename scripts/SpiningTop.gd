@@ -1,10 +1,12 @@
 extends RigidBody2D
 
+## Controller script that dictates movement of the entity
 @export var controller : MovementController
 
 @export var max_force: float = 4000.0
 @export var max_speed: float = 900.0
 
+## Rotation speed. This is influenced by inertia and therefore by the mass of the object
 @export var spin_torque: float = 1500.0 # Angular momentum?
 
 # Knockback
@@ -35,11 +37,6 @@ func _physics_process(delta: float) -> void:
 	# Clamp vitesse
 	if linear_velocity.length() > max_speed:
 		linear_velocity = linear_velocity.normalized() * max_speed
-
-	# Orientation
-	# TODO: add an arrow to show direction of velocity
-	#if linear_velocity.length() > 0.01:
-		#rotation = linear_velocity.angle()
 
 func _on_body_entered(other: Node) -> void:
 	pass

@@ -1,5 +1,8 @@
 extends MovementController
 class_name PlayerController
+## Controller for Player movement.
+##
+## Applies a force to the player based on mouse position
 
 var _prev_mouse: Vector2 = Vector2.ZERO
 var _mouse_vel: Vector2 = Vector2.ZERO
