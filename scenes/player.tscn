@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dffsjksykyudm"]
 
-[ext_resource type="Script" uid="uid://btihxje6kdikc" path="res://scripts/SpiningTop.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://btihxje6kdikc" path="res://scripts/SpinningTop.gd" id="1_g2els"]
 [ext_resource type="Script" uid="uid://buxdmkmji1p0o" path="res://scripts/PlayerMovement.gd" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://c0q821vw4sldd" path="res://sprites/player_srpite_0.png" id="2_qhqgy"]
 

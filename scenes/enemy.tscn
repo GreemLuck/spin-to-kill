@@ -1,20 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://distoeiu43ltf"]
+[gd_scene load_steps=7 format=3 uid="uid://distoeiu43ltf"]
 
-[ext_resource type="Script" uid="uid://btihxje6kdikc" path="res://scripts/SpiningTop.gd" id="1_4ra3w"]
-[ext_resource type="Script" uid="uid://vrgpv44bk256" path="res://scripts/MovementController.gd" id="2_5uy6h"]
+[ext_resource type="Script" uid="uid://btihxje6kdikc" path="res://scripts/SpinningTop.gd" id="1_4ra3w"]
+[ext_resource type="Script" uid="uid://dffqxtd5q830w" path="res://scripts/EnemyCircularMovement.gd" id="2_4ra3w"]
 [ext_resource type="Texture2D" uid="uid://cd7jqi7x5u511" path="res://sprites/enemy_srpite_0.png" id="3_c4w8v"]
 
-[sub_resource type="Resource" id="Resource_xwavj"]
-script = ExtResource("2_5uy6h")
-metadata/_custom_type_script = "uid://vrgpv44bk256"
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4ra3w"]
+friction = 0.0
+
+[sub_resource type="Resource" id="Resource_5uy6h"]
+script = ExtResource("2_4ra3w")
+metadata/_custom_type_script = "uid://dffqxtd5q830w"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nenq2"]
 radius = 25.079872
 
 [node name="Enemy" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_4ra3w")
 gravity_scale = 0.0
 script = ExtResource("1_4ra3w")
-controller = SubResource("Resource_xwavj")
+controller = SubResource("Resource_5uy6h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nenq2")
