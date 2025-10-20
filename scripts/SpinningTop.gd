@@ -6,8 +6,11 @@ extends RigidBody2D
 @export var max_force: float = 4000.0
 @export var max_speed: float = 900.0
 
+@export var torque_speed: float = 500.0;
+
 
 func _ready() -> void:
+	add_constant_torque(torque_speed)
 	apply_force(controller.get_starting_force(self))
 
 func _physics_process(delta: float) -> void:

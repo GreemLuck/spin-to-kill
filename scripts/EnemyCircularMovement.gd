@@ -4,7 +4,7 @@ class_name EnemyCircularMovement
 ##
 
 @export var clockwise: bool = true
-@export var starting_force: float = 100000.0
+@export var starting_force: float = 100.0
 @export var central_force: float = 2000
 
 func get_starting_force(owner: Node) -> Vector2:
