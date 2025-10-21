@@ -9,7 +9,6 @@ func get_starting_force(owner: Node) -> Vector2:
 	return Vector2.ZERO 
 
 
-
 ## Returns the force computed by the controller that will be applied to the entity [br]
 ## [br]
 ## [param owner] : The Node to which the force will be applied [br]

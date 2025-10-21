@@ -11,20 +11,21 @@ colors = PackedColorArray(0.27999997, 0.87999994, 1, 1, 0.049699992, 0.71, 0.269
 
 [node name="VectorArrow" type="Node2D"]
 script = ExtResource("1_847lv")
-arrow_scale = 2.7409999999999997
 color_ramp = SubResource("Gradient_847lv")
 
 [node name="Back" type="Sprite2D" parent="."]
-modulate = Color(0.09497777, 0.74342257, 0.41335994, 1)
+modulate = Color(0.21249825, 0.83017236, 0.7859759, 1)
 texture = ExtResource("3_384fh")
 
 [node name="Shaft" type="Sprite2D" parent="."]
-modulate = Color(0.09497777, 0.74342257, 0.41335994, 1)
-position = Vector2(34.02154, 0)
-scale = Vector2(2.741, 1)
+modulate = Color(0.21249825, 0.83017236, 0.7859759, 1)
+position = Vector2(14, 0)
 texture = ExtResource("2_847lv")
 
 [node name="Tip" type="Sprite2D" parent="."]
-modulate = Color(0.09497777, 0.74342257, 0.41335994, 1)
-position = Vector2(73.04308, 0)
+modulate = Color(0.21249825, 0.83017236, 0.7859759, 1)
+position = Vector2(33, 0)
 texture = ExtResource("4_847lv")
+
+[connection signal="offset_updated" from="." to="." method="_on_offset_updated"]
+[connection signal="scale_updated" from="." to="." method="_on_scale_updated"]

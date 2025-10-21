@@ -16,6 +16,7 @@ script = ExtResource("1_h843c")
 snap_padding = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Arena"]
+z_index = -1000
 scale = Vector2(1.8093126, 1.7445256)
 texture = ExtResource("1_vc4nx")
 
