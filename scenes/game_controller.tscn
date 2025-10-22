@@ -1,38 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://xkqisb1qc6j1"]
+[gd_scene load_steps=6 format=3 uid="uid://xkqisb1qc6j1"]
 
+[ext_resource type="Script" uid="uid://be5ktg02e5nha" path="res://scripts/arena.gd" id="1_h843c"]
 [ext_resource type="Texture2D" uid="uid://dkm3ge1jyhqk8" path="res://Arena.png" id="1_vc4nx"]
-[ext_resource type="Texture2D" uid="uid://bfe4tmsnieuof" path="res://player.png" id="1_vq0e2"]
+[ext_resource type="PackedScene" uid="uid://dffsjksykyudm" path="res://scenes/player.tscn" id="3_h843c"]
+[ext_resource type="PackedScene" uid="uid://distoeiu43ltf" path="res://scenes/enemy.tscn" id="4_rc0pn"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_soqow"]
-radius = 28.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h843c"]
+size = Vector2(829, 473)
 
 [node name="Main" type="Node2D"]
 
 [node name="Arena" type="Area2D" parent="."]
 position = Vector2(526, 327)
+script = ExtResource("1_h843c")
+snap_padding = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Arena"]
+z_index = -1000
 scale = Vector2(1.8093126, 1.7445256)
 texture = ExtResource("1_vc4nx")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arena"]
-rotation = -0.0011475495
-scale = Vector2(1.8093126, 1.7445256)
-polygon = PackedVector2Array(-34.5, -135.6, -87, -127, -146.1, -105, -189.5, -74, -213, -45, -223.8, -11, -224.5, 8.199997, -217.5, 35.399994, -195.5, 68, -159.5, 97.5, -107.5, 121, -45.5, 134.4, 31.799988, 137, 82, 128, 132.1, 111, 177.29999, 84, 210.9, 47, 222.79999, 12, 222.5, -16.199997, 208.5, -50.699997, 181.37173, -78.888794, 157.62488, -96.11372, 112.880585, -117.94942, 70.335724, -129.4645, 34.4162, -134.66624)
-
-[node name="Player" type="AnimatableBody2D" parent="."]
-position = Vector2(402, 322)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CircleShape2D_soqow")
-metadata/_edit_lock_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-rotation = 1.5707964
-scale = Vector2(0.22099477, 0.19704461)
-texture = ExtResource("1_vq0e2")
-offset = Vector2(-0.00024414063, -40.599976)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena"]
+position = Vector2(-2, 1.5)
+shape = SubResource("RectangleShape2D_h843c")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -42,22 +32,16 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 154.0
+offset_left = 11.0
+offset_top = 6.0
+offset_right = 1162.0
+offset_bottom = 160.0
 text = "Notre super jeu !"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Enemy" type="AnimatableBody2D" parent="."]
-position = Vector2(633, 325)
-metadata/_edit_group_ = true
+[node name="Player" parent="." instance=ExtResource("3_h843c")]
+position = Vector2(334, 295)
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-rotation = 1.5707964
-scale = Vector2(0.22099477, 0.19704461)
-texture = ExtResource("1_vq0e2")
-offset = Vector2(-0.00024414063, -40.599976)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-shape = SubResource("CircleShape2D_soqow")
-metadata/_edit_lock_ = true
+[node name="Enemy" parent="." instance=ExtResource("4_rc0pn")]
+position = Vector2(627, 311)
