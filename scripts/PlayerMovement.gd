@@ -9,9 +9,9 @@ var _mouse_vel: Vector2 = Vector2.ZERO
 var _mouse_init: bool = false
 var _hit_timer: float = 0.0
 
-@export var k_pos: float = 40.0
-@export var k_vel: float = 6.0
-@export var lin_damping: float = 8.0
+@export var k_pos: float = 10.0
+@export var k_vel: float = 1.0
+@export var lin_damping: float = 1
 
 func get_desired_force(owner,delta):
 	var mouse_position: Vector2 = owner.get_global_mouse_position()
