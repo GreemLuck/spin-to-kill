@@ -23,6 +23,8 @@ controller = SubResource("Resource_qlg0r")
 max_force = 2000.0
 max_speed = 500.0
 torque_speed = 200.0
+enable_force_arrows = null
+force_arrow_offset = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qhqgy")
@@ -31,6 +33,6 @@ texture = ExtResource("2_qhqgy")
 shape = SubResource("CircleShape2D_tuyoq")
 
 [node name="DisabledTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.534
 one_shot = true
 autostart = true

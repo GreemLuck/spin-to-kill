@@ -5,16 +5,17 @@ class_name EnemyCircularMovement
 
 @export var clockwise: bool = true
 @export var starting_force: float = 100.0
-@export var central_force: float = 2000
+@export var central_force: float = 1000.0
 
-func get_starting_force(owner: Node) -> Vector2:
-	return Vector2.RIGHT * starting_force
+func init(owner: RigidBody2D):
+	super(owner)
+	_self.apply_impulse(Vector2.RIGHT * starting_force)
 
-func get_desired_force(owner, delta) -> Vector2:
-	var v: Vector2 = owner.linear_velocity
+func movement(delta):
+	var v: Vector2 = _self.linear_velocity
 	# Normal perpendicular to linear velocity
 	var n: Vector2 = Vector2(-v.y, v.x).normalized()
 	if clockwise:
 		n = -n
 
-	return n * central_force
+	_self.apply_force(n * central_force)

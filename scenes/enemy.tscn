@@ -16,10 +16,12 @@ metadata/_custom_type_script = "uid://dffqxtd5q830w"
 radius = 25.079872
 
 [node name="Enemy" type="RigidBody2D"]
+position = Vector2(386, 219)
 physics_material_override = SubResource("PhysicsMaterial_4ra3w")
 gravity_scale = 0.0
 script = ExtResource("1_4ra3w")
 controller = SubResource("Resource_5uy6h")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nenq2")
@@ -28,5 +30,6 @@ shape = SubResource("CircleShape2D_nenq2")
 texture = ExtResource("3_c4w8v")
 
 [node name="DisabledTimer" type="Timer" parent="."]
+wait_time = 0.3
 one_shot = true
 autostart = true
